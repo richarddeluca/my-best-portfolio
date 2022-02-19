@@ -1,0 +1,17 @@
+.signInButton {
+    height: 3rem;
+    width: 10rem;
+    border-radius: 1.5rem;
+    padding: 0 1.5rem;
+    background-color: var(--bg-one);
+    border-color: var(--link);
+
+    margin-top: 1rem;
+
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-one);
+    font-weight: bold;
+}

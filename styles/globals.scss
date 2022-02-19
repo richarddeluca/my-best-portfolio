@@ -1,0 +1,65 @@
+:root {
+
+  --bg-one: #ffffff;
+  --bg-two: #000000;
+  
+  --link: #0070f3;
+
+  --hover: #ff4858;
+
+  --text-one: #000000;
+  --text-two: #ffffff;
+  --text-special: #9d0a0e;
+
+  --selection: #ff4858;
+
+  --200-one: #333333;
+  --500-one: #999999;
+  --800-one: #dddddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, select, textarea, button {
+  font: 400 1rem 'Source Sans Pro', serif;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+    
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 1080px) {
+  body{
+    font-size: 15/16 * 100%;
+    background-color: green;
+  }
+}
+
+@media (max-width: 720px) {
+  body{
+    font-size: 14/16 * 100%;
+    background-color: blue;
+  }
+}
+
+@media (max-width: 600px) {
+  body{
+    font-size: 13/16 * 100%;
+    background-color: yellow;
+  }
+}
