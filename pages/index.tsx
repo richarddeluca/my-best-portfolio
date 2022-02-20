@@ -14,7 +14,6 @@ const Home: NextPage = () => {
       <Head>
         <title>Richard Deluca Developer</title>
         <meta name="description" content="Desenvolvedor Web Front-end com tecnologias avant-garde" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className={styles.main}>
