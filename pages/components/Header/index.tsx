@@ -1,14 +1,24 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './styles.module.scss'
 
 export function Header() {
+	const logoSize = 40
 	return (
 		<header className={styles.headerContainer}>
 			<div className={styles.headerContent}>
-				<Image src="https://picsum.photos/64" width={64} height={64} alt="LOGO" />
+
+				<div className={styles.logo}>
+					<Image src={`https://picsum.photos/${logoSize}`} width={logoSize} height={logoSize} alt="LOGO" />
+				</div>
 				<nav>
-					<a href="" className={styles.active}>Home</a>
-					<a href="">Posts</a>
+					<Link href="" >
+						<a className={styles.active}>
+							Início
+						</a>
+					</Link>
+					<Link href="">Trabalhos</Link>
+					<Link href="">Contate-me</Link>
 				</nav>
 			</div>
 		</header>

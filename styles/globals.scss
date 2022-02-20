@@ -2,26 +2,47 @@
 
   --bg-one: #ffffff;
   --bg-two: #000000;
+  --bg-one-00: #ffffff00;
+  --bg-one-100: #eaeaea;
+  --link: #0070f3;
+
+  --hover: #ff4858;
+
+  --text-one: #412261;
+  --text-one-06: #41226198;
+  --text-two: white;
+  --text-special: #FA1368;
+  --text-special-two: #9d0a0e;
+
+}
+
+[data-theme='dark'] {
+  --bg-one: #21212B;
+  --bg-two: #AAAABB;
+  --bg-one-00: #21212B00;
+  --bg-one-100: #eaeaea;
   
   --link: #0070f3;
 
   --hover: #ff4858;
 
-  --text-one: #000000;
-  --text-two: #ffffff;
-  --text-special: #9d0a0e;
-
-  --selection: #ff4858;
-
-  --200-one: #333333;
-  --500-one: #999999;
-  --800-one: #dddddd;
+  --text-one: #cfc7c7;
+  --text-one-06: #cfc7c798;
+  
+  --text-two: rgb(24, 19, 19);
+  --text-special: #c40847;
+  --text-special-two: #9d0a0e;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  color: var(--text-one);
+  background-color: var(--bg-one);
 }
 
 body, input, select, textarea, button {
@@ -44,22 +65,19 @@ button {
 }
 
 @media (max-width: 1080px) {
-  body{
+  html{
     font-size: 15/16 * 100%;
-    background-color: green;
   }
 }
 
 @media (max-width: 720px) {
-  body{
+  html{
     font-size: 14/16 * 100%;
-    background-color: blue;
   }
 }
 
 @media (max-width: 600px) {
-  body{
+  html{
     font-size: 13/16 * 100%;
-    background-color: yellow;
   }
 }

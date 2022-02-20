@@ -1,0 +1,43 @@
+.ticker {
+    overflow: hidden;
+    width: 90%;
+    padding-bottom: 10px;
+    left: 0;
+  }
+  
+  .tickerNews {
+    width: 7000px;
+    padding: 10px 0;
+    color: var(--text-one-06);
+    font-size: 2rem;
+    font-family: sans-serif;
+    
+  }
+  
+  .tickerNews > * {
+    display: inline-block;
+    animation: news 30s infinite linear;
+  }
+  
+  @keyframes news {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-1400px);}
+  }
+
+.tickerSpan:hover {
+  color: var(--text-special)
+}
+
+.ticker::before {
+  position: absolute;
+  height: 3rem;
+  width: 90%;
+  content: "";
+  background: linear-gradient(to right,
+     var(--bg-one) 15%, 
+     var(--bg-one-00) 25% 70%,
+     var(--bg-one) 80% 100%
+  );
+  pointer-events: none;
+  z-index: 1; 
+}

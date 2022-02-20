@@ -4,61 +4,61 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import { Headlines } from './components/Headlines'
 import { SignInButton } from './components/SignInButton'
+import { ThemeChanger } from './components/ThemeChanger'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Portal RPG</title>
-        <meta name="description" content="Organize suas mesas, mundos, participantes e personagens de RPG" />
+        <title>Richard Deluca Developer</title>
+        <meta name="description" content="Desenvolvedor Web Front-end com tecnologias avant-garde" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className={styles.main}>
         <section className={styles.titleSection}>
 
-          <h1 className={styles.title}>
-            Bem vinde ao <a href="https://nextjs.org">Portal RPG</a>!
-          </h1>
+          <h2 className={styles.subtitle1}>Sou</h2>
+          <h1 className={styles.title}>Richard Deluca</h1>
+          <h2 className={styles.subtitle2}>Desenvolvedor front-end</h2>
 
-          <h2>A aventura te espera!</h2>
+          <ThemeChanger />
 
-          <p className={styles.description}>
-            Comece criando sua conta{' '}
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <SignInButton />
         </section>
+
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="" className={styles.card}>
+            <h2>Sites &rarr;</h2>
+            <p>Por enquanto não há nada para mostrar</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          <a href="" className={styles.card}>
+            <h2>Sobre mim</h2>
+            <p>Gosto de cachorros, de filosofia da ciência e de pastel</p>
           </a>
 
           <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href=""
             className={styles.card}
           >
-            <h2>Deploy &rarr;</h2>
+            <h2>Repositório</h2>
+            <p>Por enquanto boilerplates e projetos web. </p>
+          </a>
+
+          <a
+            href=""
+            className={styles.card}
+          >
+            <h2>Linkedin</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Bora nos conectar. Te conheço? Me arranja um emprego.
             </p>
           </a>
         </div>
+
+        <Headlines split=" - ">NextJS - Typescript - StyledComponents - React - Github - HTML - CSS - Javascript - Figma - NodeJS - Testes - Jest - Authentication - Godot - NextJS - Typescript - StyledComponents - React Github - HTML - CSS - Javascript - Figma - NodeJS - Testes - Jest - Authentication - Godot</Headlines>
       </main>
 
       <Footer />
