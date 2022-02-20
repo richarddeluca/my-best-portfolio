@@ -2,11 +2,10 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { Headlines } from './components/Headlines'
-import { SignInButton } from './components/SignInButton'
-import { ThemeChanger } from './components/ThemeChanger'
+import { Footer } from '../components/Footer'
+import { Header } from '../components/Header'
+import { Headlines } from '../components/Headlines'
+import { ThemeChanger } from '../components/ThemeChanger'
 
 const Home: NextPage = () => {
   return (
