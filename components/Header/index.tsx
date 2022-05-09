@@ -3,6 +3,7 @@ import Link from 'next/link'
 import styles from './styles.module.scss'
 import { ToggleSwitch } from '../ToggleSwitch'
 import { ThemeChanger } from '../ThemeChanger'
+import { MenuBox } from '../MenuBox'
 
 export function Header() {
 	const logoSize = 40
@@ -11,7 +12,8 @@ export function Header() {
 			<div className={styles.headerContent}>
 
 				<div className={styles.logo}>
-					<ToggleSwitch />
+					<MenuBox />
+
 				</div>
 				<nav>
 					<Link href="" >
