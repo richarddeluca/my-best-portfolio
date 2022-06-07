@@ -8,8 +8,6 @@ import { Header } from '../components/Header'
 import { Headlines } from '../components/Headlines'
 import { Footer } from '../components/Footer'
 import { MenuBox } from '../components/MenuBox'
-import { GridSection } from '../components/GridSection'
-import { SpendingsController } from '../components/SpendingsController'
 import data from '../data.json'
 const Home: NextPage = () => {
   console.log(data.techList)
