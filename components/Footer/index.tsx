@@ -15,7 +15,7 @@ export function Footer() {
           <Image src="/linkedin-icon.svg" alt="Vercel Logo" width={16} height={16} />
         </a>
       </div>
-      <br /><p>site em construção</p>
+      <p>site em construção</p>
     </footer >
   )
 }

@@ -7,12 +7,24 @@
 
   color: var(--text-one);
   background-color: var(--bg-one);
+
+  p,
+  div {
+    margin: auto;
+    width: fit-content;
+  }
 }
+
+// .footerContent {
+//   margin: 0 auto;
+//   width: fit-content;
+// }
 
 .logo {
   height: 1em;
   margin-left: 0.5rem;
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   width: 2.5rem;
 }
