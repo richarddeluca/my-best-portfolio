@@ -17,13 +17,13 @@ export function Sidebar() {
           Editar seu perfil
         </a>
       </footer>
-      <section class="box perfil">
+      <section className={styles.boxPerfil}>
         <img src="https://picsum.photos/150" alt="Foto de Richard, imagem de perfil" />
         <h1>Richard Deluca</h1>
         <p>Desenvolvedor Web</p>
       </section>
 
-      <section class="box contato">
+      <section className={styles.boxContato}>
         <article>
           <a href="">
             <img src="https://picsum.photos/20" alt="ícone localização" />
@@ -48,21 +48,19 @@ export function Sidebar() {
         </article>
       </section>
 
-      <section class="box tecnologias">
+      <section className={styles.boxTecnologias}>
         <h2>Tecnologias</h2>
-        <article>
-          <div class="tech">Javascript</div>
-          <div class="tech">Javascript</div>
-          <div class="tech">Javascript</div>
-          <div class="tech">Javascript</div>
-          <div class="tech">Javascript</div>
-          <div class="tech">Javascript</div>
-          <div class="tech">Javascript</div>
-          <div class="tech">Javascript</div>
-          <div class="tech">Javascript</div>
+        <article className={styles.techList}>
+          <div>Javascript</div>
+          <div>Javascript</div>
+          <div>Javascript</div>
+          <div>Javascript</div>
+          <div>Javascript</div>
+          <div>Javascript</div>
+          <div>Javascript</div>
         </article>
       </section>
-      <section class="box experiencias">
+      <section className={styles.boxExperiencias}>
         <h2>Experiências</h2>
         <article>
           <ul>
@@ -79,7 +77,7 @@ export function Sidebar() {
           </ul>
         </article>
       </section>
-      <section class="box educacao">
+      <section className={styles.boxEducacao}>
         <h2>Educação</h2>
         <article>
           <ul>
