@@ -1,29 +1,34 @@
 .ticker {
-    overflow: hidden;
-    width: 90%;
-    padding-bottom: 10px;
-    left: 0;
-    margin: auto;
+  overflow: hidden;
+  width: 90%;
+  padding-bottom: 10px;
+  left: 0;
+  margin: auto;
+}
+
+.tickerNews {
+  width: 7000px;
+  padding: 10px 0;
+  color: var(--text-one-06);
+  font-size: 2rem;
+  font-family: sans-serif;
+
+}
+
+.tickerNews>* {
+  display: inline-block;
+  animation: news 30s infinite linear;
+}
+
+@keyframes news {
+  0% {
+    transform: translateX(0);
   }
-  
-  .tickerNews {
-    width: 7000px;
-    padding: 10px 0;
-    color: var(--text-one-06);
-    font-size: 2rem;
-    font-family: sans-serif;
-    
+
+  100% {
+    transform: translateX(-1400px);
   }
-  
-  .tickerNews > * {
-    display: inline-block;
-    animation: news 30s infinite linear;
-  }
-  
-  @keyframes news {
-    0% {transform: translateX(0);}
-    100% {transform: translateX(-1400px);}
-  }
+}
 
 .tickerSpan:hover {
   color: var(--text-special)
@@ -32,14 +37,13 @@
 .ticker::before {
   position: absolute;
   height: 4rem;
-  left: 6vw;
-  right: 6vw;
+  left: 5vw;
+  right: 5vw;
   content: "";
   background: linear-gradient(to right,
-    var(--bg-one) 6%, 
-    var(--bg-one-00) 25% 75%,
-    var(--bg-one) 94% 100%
-  );
+      var(--bg-one) 6%,
+      var(--bg-one-00) 25% 75%,
+      var(--bg-one) 94% 100%);
 
   // background: linear-gradient(to right,
   //    rgba(0, 0, 255, 0.199) 10%, 
@@ -48,5 +52,5 @@
   //    rgba(0, 128, 0, 0.116) 90% 100%
   // );
   pointer-events: none;
-  z-index: 1; 
+  z-index: 1;
 }

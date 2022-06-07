@@ -5,7 +5,7 @@
   flex-direction: column;
   // justify-content: center;
   align-items: center;
-  background-color: rgb(185, 255, 176);
+  border: 1px solid aquamarine;
 }
 
 .titleSection {
@@ -37,22 +37,23 @@
     background-color: var(--bg-special);
     color: var(--text-special);
     z-index: 2;
-    transition: color 0.6s cubic-bezier(1,.02,.71,.9), background-color 0.3s;
+    transition: color 0.6s cubic-bezier(1, .02, .71, .9), background-color 0.3s;
   }
 }
 
-.subtitle1, .subtitle2 {
+.subtitle1,
+.subtitle2 {
   font-weight: bold;
   text-align: left;
   font-size: calc(2vw + 1rem);
 }
 
 @media (min-width: 720px) {
-  
-  .lastName{
+
+  .lastName {
 
     background-color: inherit;
-    
+
     &:hover {
       background-color: inherit;
       transition: color 0.6s ease;
@@ -61,7 +62,7 @@
 
   .titleSection {
     max-width: 700px;
-    background-color: aqua;
+    border: 1px solid aqua;
   }
 }
 

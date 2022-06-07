@@ -10,8 +10,9 @@ import { Footer } from '../components/Footer'
 import { MenuBox } from '../components/MenuBox'
 import { GridSection } from '../components/GridSection'
 import { SpendingsController } from '../components/SpendingsController'
-
+import data from '../data.json'
 const Home: NextPage = () => {
+  console.log(data.techList)
   return (
     <div className={styles.container}>
       <Head>
@@ -19,18 +20,13 @@ const Home: NextPage = () => {
         <meta name="description" content="Desenvolvedor Web Front-end com tecnologias avant-garde" />
       </Head>
 
-      <Header />
-
       <main className={styles.main}>
 
         <FirstScreen />
-        <SpendingsController />
-        <GridSection />
 
-        <Headlines split=" - ">NextJS - Typescript - StyledComponents - React - Github - HTML - CSS - Javascript - Figma - NodeJS - Testes - Jest - Authentication - Godot - NextJS - Typescript - StyledComponents - React Github - HTML - CSS - Javascript - Figma - NodeJS - Testes - Jest - Authentication - Godot</Headlines>
+        <Headlines split=" - ">{data.techList + data.techList + data.techList}</Headlines>
       </main>
 
-      <Footer />
     </div>
   )
 }

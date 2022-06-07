@@ -1,4 +1,4 @@
-.menuComponent{
+.menuComponent {
   border: 0;
 
 }
@@ -16,25 +16,28 @@
   top: 8vh;
   transition: 0.6s;
 
-  span{
+  span {
     display: inline-block;
     position: relative;
     top: 0;
 
   }
-  :nth-of-type(odd){
+
+  :nth-of-type(odd) {
     top: 0;
   }
-  :nth-of-type(even){
+
+  :nth-of-type(even) {
     top: 0;
   }
 }
 
 .menuButton:hover {
-  :nth-of-type(odd){
+  :nth-of-type(odd) {
     top: -.1rem;
   }
-  :nth-of-type(even){
+
+  :nth-of-type(even) {
     top: .1rem;
   }
 
@@ -46,69 +49,75 @@
   height: 8rem;
   top: 12vh;
   font-size: 1.6rem;
-  
+
   transition: 0.6s;
 }
 
 .menuComp {
-    // margin: 1rem;
-    // padding: 1.5rem;
-    // text-align: left;
-    // color: inherit;
-    // text-decoration: none;
-    // border: 1px solid var(--bg-one-100);
-    // border-radius: 10px;
-    // transition: color 0.15s ease, border-color 0.15s ease;
-    // max-width: 300px;
+  // margin: 1rem;
+  // padding: 1.5rem;
+  // text-align: left;
+  // color: inherit;
+  // text-decoration: none;
+  // border: 1px solid var(--bg-one-100);
+  // border-radius: 10px;
+  // transition: color 0.15s ease, border-color 0.15s ease;
+  // max-width: 300px;
 
-    position: fixed;
-      left: -60%;
-      top: -100%;
-      flex-direction: column;
-      width: 90%;
-      height: 99%;
-      border-radius: 3px;
-      text-align: center;
-      z-index: 5;
-      // display: flex;
-      
-    .menuItem {
-      margin: 13vh 0;
-      overflow: hidden;
-      
-    
-    }
-    .menuLink{
-      font-size: 4rem;
-      font-weight: 500;
-      color: var(--text-one);
-      text-transform: uppercase;
-      // transition-delay: 2s;
-      position: relative; top: -5rem; opacity: 0.2;
-      transition: 0.6s 0.8s, color 0.2s;
-      
-    }
-    .menuLink:hover{
-      color: var(--hover);
-    }
+  position: fixed;
+  left: -60%;
+  top: -100%;
+  flex-direction: column;
+  width: 90%;
+  height: 99%;
+  border-radius: 3px;
+  text-align: center;
+  z-index: 5;
+  // display: flex;
 
-    opacity: 0.2;
-    background-color: var(--text-special);
-    transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
+  opacity: 0.2;
+  background-color: var(--text-special);
+  transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-.menuComp.active {
-  left: 5%;
-  top: 1%;
-  opacity: 1;
-  background-color:var(--bg-three);
-
-  .menuLink {
+  &.active {
+    left: 5%;
+    top: 1%;
     opacity: 1;
-    top: 0px;
-    position: relative;
+    background-color: var(--bg-one);
+
+    a {
+      opacity: 1;
+      top: 0px;
+      position: relative;
+    }
+
   }
 
-    
-}
+  .menuItem {
+    margin: 13vh 0;
+    overflow: hidden;
 
+
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--text-one);
+    text-transform: uppercase;
+    // transition-delay: 2s;
+    position: relative;
+    top: -5rem;
+    opacity: 0.2;
+    transition: 0.6s 0.8s, color 0.2s;
+
+  }
+
+  a:hover {
+    color: var(--text-special);
+  }
+}

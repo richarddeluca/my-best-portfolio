@@ -4,29 +4,36 @@ import styles from './styles.module.scss'
 import { ToggleSwitch } from '../ToggleSwitch'
 import { ThemeChanger } from '../ThemeChanger'
 import { MenuBox } from '../MenuBox'
+import { ActiveLink } from '../ActiveLink'
 
 export function Header() {
-	const logoSize = 40
-	return (
-		<header className={styles.headerContainer}>
-			<div className={styles.headerContent}>
+  const logoSize = 40
+  return (
+    <header className={styles.headerContainer}>
+      <div className={styles.headerContent}>
 
-				<div className={styles.logo}>
-					<MenuBox />
+        <div className={styles.logo}>
+          <MenuBox />
 
-				</div>
-				<nav>
-					<Link href="" >
-						<a className={styles.active}>
-							Início
-						</a>
-					</Link>
-					<Link href="">Sobre</Link>
-					<Link href="">Projetos</Link>
-					<Link href="">Contate-me</Link>
-					<ThemeChanger content={'Cor'} />
-				</nav>
-			</div>
-		</header>
-	)
+        </div>
+        <nav>
+          <ActiveLink activeClassName={styles.active} href="/" >
+            <a className={styles.active}>
+              Início
+            </a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/about">
+            <a className={styles.active}>Sobre</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/feed">
+            <a>Projetos</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/contact">
+            <a>Contate-me</a>
+          </ActiveLink>
+          <ThemeChanger content={'Cor'} />
+        </nav>
+      </div>
+    </header>
+  )
 }
