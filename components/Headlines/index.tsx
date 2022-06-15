@@ -14,7 +14,20 @@ export function Headlines(props: Props) {
   return (
     <div className={styles.ticker}>
       <div className={styles.tickerNews}>
-        <p className={styles.tickerLine}>
+        <div className={styles.tickerLine}>
+          {
+            textList.map((chunk) => {
+              count++
+              chunkText = (chunk)
+              return (
+                <span key={count}>
+                  <span className={styles.tickerSpan}>
+                    {chunkText}
+                  </span>{' - '}
+                </span>
+              )
+            })
+          }
           {
             textList.map((chunk) => {
               count++
@@ -29,8 +42,9 @@ export function Headlines(props: Props) {
             })
           }
 
-        </p>
+
+        </div>
       </div>
-    </div>
+    </div >
   )
 }
