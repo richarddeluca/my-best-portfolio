@@ -1,3 +1,31 @@
 {
-  "techList": "NextJS - Typescript - StyledComponents - React - Github - HTML - CSS - Javascript - Figma - Authentication - Godot"
+  "techList": "NextJS - Typescript - StyledComponents - React - Github - HTML - CSS - Javascript - Figma - Authentication - Godot",
+  "navList": [
+    {
+      "id": "1",
+      "title": "Início",
+      "link": "/"
+    },
+    {
+      "id": "2",
+      "title": "sobre",
+      "link": "/about"
+    },
+    {
+      "id": "3",
+      "title": "projetos",
+      "list": [
+        {
+          "id": "3.1",
+          "title": "ToDo",
+          "link": "/todo"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "contate-me",
+      "link": "/contact"
+    }
+  ]
 }

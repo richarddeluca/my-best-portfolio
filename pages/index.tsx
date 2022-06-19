@@ -4,13 +4,9 @@ import type { NextPage } from 'next'
 
 import Head from 'next/head'
 import { FirstScreen } from '../components/FirstScreen'
-import { Header } from '../components/Header'
 import { Headlines } from '../components/Headlines'
-import { Footer } from '../components/Footer'
-import { MenuBox } from '../components/MenuBox'
 import data from '../data.json'
 const Home: NextPage = () => {
-  console.log(data.techList)
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +18,7 @@ const Home: NextPage = () => {
 
         <FirstScreen />
 
-        <Headlines split=" - ">{data.techList + data.techList + data.techList}</Headlines>
+        <Headlines split=" - ">{data.techList}</Headlines>
       </main>
 
     </div>

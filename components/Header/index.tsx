@@ -5,34 +5,33 @@ import { ToggleSwitch } from '../ToggleSwitch'
 import { ThemeChanger } from '../ThemeChanger'
 import { MenuBox } from '../MenuBox'
 import { ActiveLink } from '../ActiveLink'
+import { v4 } from 'uuid'
+import { useState } from 'react'
+import { Navigation } from '../Navigation'
+import { navList as navContent } from '../../data.json'
+interface NavContent {
+  id?: string,
+  title: string,
+  link?: string,
+  list?: NavContent[]
+}
+
+interface NavItemProps {
+  item: NavContent
+}
+
+const logoSize = 40
 
 export function Header() {
-  const logoSize = 40
+
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
 
         <div className={styles.logo}>
-          <MenuBox />
-
-        </div>
-        <nav>
-          <ActiveLink activeClassName={styles.active} href="/" >
-            <a className={styles.active}>
-              Início
-            </a>
-          </ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/about">
-            <a className={styles.active}>Sobre</a>
-          </ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/feed">
-            <a>Projetos</a>
-          </ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/contact">
-            <a>Contate-me</a>
-          </ActiveLink>
           <ThemeChanger content={'Cor'} />
-        </nav>
+        </div>
+        <Navigation list={navContent} />
       </div>
     </header>
   )

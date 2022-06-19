@@ -1,0 +1,136 @@
+.App {
+  --form-height: 3.5rem;
+  --container-margin-top: 4rem;
+  text-align: center;
+  background-color: var(--bg-one);
+  color: var(--text-one);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .a {
+    font-size: 3.5rem;
+    background: -webkit-linear-gradient(left, var(--text-special), var(--text-special-two));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.header {
+  display: flex;
+  height: 13.5rem;
+  align-items: center;
+  background-color: var(--text-two);
+  color: var(--text-one);
+
+  .headerTitle {
+    display: flex;
+    margin: auto;
+  }
+
+  .headerLogo {
+    margin: auto;
+    margin-right: .5rem;
+    color: var(--bg-three);
+  }
+}
+
+.container {
+  text-align: center;
+  margin: var(--container-margin-top) auto 0;
+  width: 90vw;
+  max-width: 768px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  @media (min-width: 1800px) {
+    max-width: 1200px;
+  }
+
+  .form {
+    display: flex;
+    // flex-direction: row;
+    // align-items: center;
+    // justify-content: stretch;
+    padding: 0;
+    gap: 8px;
+    width: 100%;
+    height: var(--form-height);
+    top: calc(-1*(var(--container-margin-top) + var(--form-height)/2));
+    position: absolute;
+
+    input {
+
+      background-color: var(--bg-one-100);
+      color: var(--text-one-06);
+      flex-grow: 1;
+      height: 95%;
+      border-radius: 7px;
+      padding: 1rem;
+    }
+
+    button {
+      height: 95%;
+      width: 5.6rem;
+      border-radius: 8px;
+      background-color: var(--bg-three);
+
+      &:hover {
+        filter: brightness(116%);
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form {
+      display: grid;
+      grid-template-columns: 70vw 100px;
+      grid-template-rows: 1fr 1fr;
+      flex-direction: column;
+
+
+      input {
+        border-radius: 5px;
+        padding: 1rem;
+      }
+
+      button {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+    }
+  }
+
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0.4rem 1.5rem;
+  }
+
+  section {
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 16rem);
+    grid-gap: 2.5rem 1.5rem;
+    justify-content: center;
+    min-height: 22rem;
+    margin-bottom: 2rem;
+
+    &.noTask {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 1px solid var(--text-one-06);
+      border-radius: 10px;
+    }
+  }
+
+}

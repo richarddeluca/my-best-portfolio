@@ -49,31 +49,6 @@
 
 :root {
 
-  --bg-one: #fcfcf4;
-  --bg-one-100: #eaeaea;
-  --bg-one-00: #ffffff00;
-
-  --bg-two: #221a26;
-  --bg-two-100: #221a26;
-
-  --bg-three: #86b6ff;
-
-  --bg-special: #ededfd;
-
-  --link: #0070f3;
-
-  --hover: #ff4858;
-
-  --text-one: #412261;
-  --text-one-06: #41226198;
-  --text-two: white;
-
-  --text-special: #FA1368;
-  --text-special-01: rgb(250, 19, 104, 0.04);
-
-
-  --text-special-two: #9d0a0e;
-
   --amber-50: #FFFBEB;
   --amber-100: #FEF3C7;
   --amber-200: #FDE68A;
@@ -315,13 +290,44 @@
   --zinc-700: #3F3F46;
   --zinc-800: #27272A;
   --zinc-900: #18181B;
-
 }
 
+[data-theme='light'] {
+
+  --bg-one: #fff9f9;
+  --bg-one-100: #eaeaea;
+  --bg-one-00: #ffffff00;
+  --bg-one-b: #f8f1f1;
+
+  --bg-two: #221a26;
+  --bg-two-100: #221a26;
+
+  --bg-three: #86b6ff;
+
+  --bg-special: #ededfd;
+
+  --link: #0070f3;
+
+  --hover: #ff4858;
+
+  --text-one: #412261;
+  --text-one-06: #41226198;
+  --text-two: white;
+
+  --text-special: #FA1368;
+  --text-special-01: rgb(250, 19, 104, 0.04);
+
+
+  --text-special-two: #9d0a0e;
+}
+
+
 [data-theme='dark'] {
-  --bg-one: #21212B;
+  // --bg-one: #21212B;
+  --bg-one: #1c1b22;
   --bg-one-00: #21212B00;
   --bg-one-100: #2d2d36;
+  --bg-one-b: #191925;
 
   --bg-two: #AAAABB;
   --bg-special: #AAAABB;
@@ -329,6 +335,8 @@
   --bg-two-01: rgba(170, 170, 187, 0.1);
 
   --bg-three: #1e375c;
+  --bg-three-06: #1e375c77;
+
 
   --link: #0070f3;
 
@@ -359,18 +367,26 @@
 body {
   color: var(--text-one);
   background-color: var(--bg-one);
+  font: 400 1rem 'Source Sans Pro', serif;
+
 }
 
-body,
+
 input,
 select,
 textarea,
 button {
   font: 400 1rem 'Source Sans Pro', serif;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 a {
-  color: var(--link);
+  color: inherit;
   text-decoration: none;
 }
 
@@ -382,6 +398,14 @@ a:active {
 
 button {
   cursor: pointer;
+  transition: background-color .2s;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
 }
 
 // @media (max-width: 2000px) {
