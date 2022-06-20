@@ -20,8 +20,8 @@ interface TaskData {
 export default function App() {
 
   const [listaDeTarefas, setListaDeTarefas] = useState<TaskData[]>([
+    { key: uuidv4(), isCompleted: false, title: 'Web Dev', text: 'Terminar de desenvolver ToDo App e postar no LinkedIn' },
     { key: uuidv4(), isCompleted: false, title: 'Estudos', text: 'Ler algumas páginas do livro Rápido e Devagar' },
-    { key: uuidv4(), isCompleted: true, title: 'Web Dev', text: 'Terminar de desenvolver ToDo App (produto mínimo viável) e postar no LinkedIn' },
     { key: uuidv4(), isCompleted: false, title: 'Meditação', text: 'Praticar um exercício do livro A Liberated Mind' },
     { key: uuidv4(), isCompleted: false, title: 'Lazer', text: 'Acorda o Pedrinho, que hoje tem chocolate. Vem dançar calipso, vai ver cotio colhátio. don-don, dig-ri-don, don-don-don dig-dig-don, don , dig-ri-don, don-don-don dig-dig. - (John Lennon ft. Belchior)' },
   ])

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 // import { NavItem } from '../NavItem'
 import { ActiveLink } from '../ActiveLink'
@@ -14,6 +14,24 @@ interface NavList {
 }
 export function Navigation({ list = navList }: NavList) {
   const [openNav, setOpenNav] = useState(false)
+  const [windowScrolled, setWindowScrolled] = useState(false)
+  function controlNavOnScroll() {
+    if (window.scrollY > 200) {
+      setWindowScrolled(true)
+    }
+    else {
+      setWindowScrolled(false)
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll',
+      controlNavOnScroll)
+    return () => {
+      window.removeEventListener('scroll',
+        controlNavOnScroll)
+    }
+  }, [])
+
   function NavItem({ item }: NavItemProps) {
     const [openLi, setOpenLi] = useState(false)
 
@@ -33,7 +51,7 @@ export function Navigation({ list = navList }: NavList) {
 
                       <ActiveLink activeClassName={styles.active} key={item.id} href={`${item.link}`} >
                         <a className={styles.active}>
-                          <li><p onClick={() => setOpenNav(show => !show)}>{item.title}</p></li>
+                          <li><p onClick={() => window.innerWidth < 700 ? setOpenNav(show => !show) : null}>{item.title}</p></li>
                         </a>
                       </ActiveLink>
                     )
@@ -51,7 +69,7 @@ export function Navigation({ list = navList }: NavList) {
       <ActiveLink activeClassName={styles.active} href={`${item.link}`} >
         <a className={styles.active}>
           <li className={styles.unique}>
-            <p onClick={() => setOpenNav(show => !show)} >{item.title}{item.list && <span className={styles.pointing}>{' \u25BE'}</span>}</p>
+            <p onClick={() => window.innerWidth < 700 ? setOpenNav(show => !show) : null} >{item.title}{item.list && <span className={styles.pointing}>{' \u25BE'}</span>}</p>
             {/* <p>{item.title}{item.list && <Play size={12} className={styles.seta} />}</p> */}
           </li>
         </a>
@@ -84,7 +102,10 @@ export function Navigation({ list = navList }: NavList) {
       </nav>
 
       <button
-        className={`${openNav ? styles.open : styles.closed} ${styles.toggle}`}
+        className={
+          `${openNav ? styles.open : styles.closed}
+          ${windowScrolled && !openNav ? styles.scrolled : ''}
+          ${styles.toggle}`}
         onClick={() => setOpenNav(show => !show)}
 
       >

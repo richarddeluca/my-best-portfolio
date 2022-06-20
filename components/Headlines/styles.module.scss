@@ -11,6 +11,7 @@
 .ticker,
 .ticker * {
   overflow: hidden;
+
 }
 
 .tickerLine {
@@ -26,6 +27,7 @@
   font-family: sans-serif;
 
   animation: move-right-to-left linear 26s infinite;
+
 }
 
 /* use this one to move from left to right direction */
@@ -55,12 +57,13 @@
 }
 
 .ticker::before {
+  transition: background-color .4s ease-in 1ms;
   position: absolute;
   height: 4rem;
   left: 0;
   right: 0;
   content: "";
-  background: linear-gradient(to right,
+  background-image: linear-gradient(to right,
       var(--bg-one) 5%,
       var(--bg-one-00) 24% 75%,
       var(--bg-one) 94% 100%);
