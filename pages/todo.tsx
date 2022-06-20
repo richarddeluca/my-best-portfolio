@@ -33,7 +33,7 @@ export default function App() {
   function handleCreateNewTodo(event: FormEvent) {
     event.preventDefault()
     const novaTarefa = { key: uuidv4(), isCompleted: false, title: todoTitle, text: todoText }
-    setListaDeTarefas([...listaDeTarefas, novaTarefa])
+    setListaDeTarefas([novaTarefa, ...listaDeTarefas])
     setTodoText('')
     setTodoTitle('')
   }

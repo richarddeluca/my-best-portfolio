@@ -29,7 +29,6 @@
           font-size: 1.2rem;
           cursor: pointer;
           line-height: 100%;
-          transition: .4 all ease-in-out;
           color: var(--text-one);
 
           &:hover {
@@ -195,9 +194,7 @@
       }
     }
 
-    transition: all .6s ease-in,
-    background-color 1ms;
-
+    transition: all .5s ease-in
   }
 
 }
