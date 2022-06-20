@@ -14,6 +14,51 @@ interface NavList {
 }
 export function Navigation({ list = navList }: NavList) {
   const [openNav, setOpenNav] = useState(false)
+  function NavItem({ item }: NavItemProps) {
+    const [openLi, setOpenLi] = useState(false)
+
+    if (item.list) {
+      return (
+        <li onClick={() => setOpenLi(show => !show)} className={`${openLi ? styles.open : styles.closed} ${styles.parent}`}>
+          <p>{item.title}
+            <span className={styles.pointing}>{' \u25BE'}</span>
+          </p>
+          {/* <p>{item.title}{item.list && <Play size={12} className={styles.seta} />}</p> */}
+          <SlideDown className={'my-dropdown-slidedown'}>
+            {openLi &&
+              <ul className={styles.navbarDropdown}>
+                {
+                  item.list.map(item => {
+                    return (
+
+                      <ActiveLink activeClassName={styles.active} key={item.id} href={`${item.link}`} >
+                        <a className={styles.active}>
+                          <li><p onClick={() => setOpenNav(show => !show)}>{item.title}</p></li>
+                        </a>
+                      </ActiveLink>
+                    )
+                  }
+                  )
+                }
+              </ul>
+            }
+          </SlideDown>
+        </li>
+      )
+    }
+
+    return (
+      <ActiveLink activeClassName={styles.active} href={`${item.link}`} >
+        <a className={styles.active}>
+          <li className={styles.unique}>
+            <p onClick={() => setOpenNav(show => !show)} >{item.title}{item.list && <span className={styles.pointing}>{' \u25BE'}</span>}</p>
+            {/* <p>{item.title}{item.list && <Play size={12} className={styles.seta} />}</p> */}
+          </li>
+        </a>
+
+      </ActiveLink>
+    )
+  }
   return (
     <>
       <nav
@@ -49,48 +94,3 @@ export function Navigation({ list = navList }: NavList) {
   )
 }
 
-function NavItem({ item }: NavItemProps) {
-  const [openLi, setOpenLi] = useState(false)
-
-  if (item.list) {
-    return (
-      <li onClick={() => setOpenLi(show => !show)} className={`${openLi ? styles.open : styles.closed} ${styles.parent}`}>
-        <p>{item.title}
-          <span className={styles.pointing}>{' \u25BE'}</span>
-        </p>
-        {/* <p>{item.title}{item.list && <Play size={12} className={styles.seta} />}</p> */}
-        <SlideDown className={'my-dropdown-slidedown'}>
-          {openLi &&
-            <ul className={styles.navbarDropdown}>
-              {
-                item.list.map(item => {
-                  return (
-
-                    <ActiveLink activeClassName={styles.active} key={item.id} href={`${item.link}`} >
-                      <a className={styles.active}>
-                        <li><p>{item.title}</p></li>
-                      </a>
-                    </ActiveLink>
-                  )
-                }
-                )
-              }
-            </ul>
-          }
-        </SlideDown>
-      </li>
-    )
-  }
-
-  return (
-    <ActiveLink activeClassName={styles.active} href={`${item.link}`} >
-      <a className={styles.active}>
-        <li className={styles.unique}>
-          <p>{item.title}{item.list && <span className={styles.pointing}>{' \u25BE'}</span>}</p>
-          {/* <p>{item.title}{item.list && <Play size={12} className={styles.seta} />}</p> */}
-        </li>
-      </a>
-
-    </ActiveLink>
-  )
-}

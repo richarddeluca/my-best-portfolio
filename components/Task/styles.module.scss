@@ -119,8 +119,13 @@
   }
 
   &.completed {
-    background-color: rgba(58, 58, 58, 0.096);
-    color: var(--bg-special);
+    // color: var(--bg-special);
+    filter: opacity(0.3);
+
+    &:hover {
+      filter: opacity(.7);
+
+    }
 
     .ok {
       span {
@@ -140,5 +145,18 @@
         background-color: var(--bg-three-06);
       }
     }
+  }
+}
+
+.task {
+  @media(max-width: 480px) {
+    width: 100%;
+    height: fit-content;
+    max-height: 6rem;
+
+    // .delete,
+    // .ok {
+    //   scale: 80%;
+    // }
   }
 }

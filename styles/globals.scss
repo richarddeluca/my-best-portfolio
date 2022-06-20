@@ -294,7 +294,7 @@
 
 [data-theme='light'] {
 
-  --bg-one: #fff9f9;
+  --bg-one: #faf8ff;
   --bg-one-100: #eaeaea;
   --bg-one-00: #ffffff00;
   --bg-one-b: #f8f1f1;
@@ -303,6 +303,7 @@
   --bg-two-100: #221a26;
 
   --bg-three: #86b6ff;
+  --bg-three-06: #86b6ff77;
 
   --bg-special: #ededfd;
 
@@ -369,6 +370,10 @@ body {
   background-color: var(--bg-one);
   font: 400 1rem 'Source Sans Pro', serif;
 
+  @media(max-width: 700px) {
+
+    transition: background-color .5s ease-in;
+  }
 }
 
 
