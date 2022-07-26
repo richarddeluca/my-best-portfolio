@@ -1,0 +1,9 @@
+escolhas do usuário:
+- tamanho do pedaço, ok
+- alinhado ou não, ok
+- com ou sem som,
+- com ou sem cor,
+- qual cor,
+- com ou sem borda,
+- tamanho do gap, ok
+- 3D ok

@@ -1,0 +1,84 @@
+.ticker {
+
+  position: relative;
+  min-height: 82px;
+  width: 90%;
+  max-width: 900px;
+  padding-bottom: 10px;
+  // border: 1px solid blue;
+}
+
+.ticker,
+.ticker * {
+  overflow: hidden;
+
+}
+
+.tickerLine {
+  white-space: nowrap;
+}
+
+.tickerNews {
+  width: fit-content;
+  position: absolute;
+  padding: 10px 0;
+  color: var(--text-one-06);
+  font-size: 2rem;
+  font-family: sans-serif;
+
+  animation: move-right-to-left linear 26s infinite;
+
+  &:hover {
+    // animation-play-state: paused;
+  }
+}
+
+/* use this one to move from left to right direction */
+@keyframes move-left-to-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* use this one to move from right to left direction */
+@keyframes move-right-to-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tickerSpan:hover {
+  color: var(--text-special)
+}
+
+.dotSpan {
+  filter: opacity(.3);
+}
+
+.ticker::before {
+  transition: background-color .4s ease-in 1ms;
+  position: absolute;
+  height: 4rem;
+  left: 0;
+  right: 0;
+  content: "";
+  background-image: linear-gradient(to right,
+      var(--bg-one) 5%,
+      var(--bg-one-00) 24% 75%,
+      var(--bg-one) 94% 100%);
+  // background: linear-gradient(to right,
+  //     rgba(0, 0, 255, 0.199) 10%,
+  //     rgba(255, 0, 0, 0.267) 10% 50%,
+  //     rgba(255, 255, 0, 0.144) 50% 90%,
+  //     rgba(0, 128, 0, 0.116) 90% 100%);
+  pointer-events: none;
+  z-index: 1;
+}

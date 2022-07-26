@@ -1,0 +1,52 @@
+.footerContainer {
+  margin: 0 auto;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--bg-one-100);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  color: var(--text-one);
+  background-color: var(--bg-one);
+  flex-grow: 1;
+  // min-height: 100px;
+  max-height: 4rem;
+
+  p,
+  div {
+    margin: auto;
+    width: fit-content;
+  }
+}
+
+// .footerContent {
+//   margin: 0 auto;
+//   width: fit-content;
+// }
+
+.logoContainer {
+  height: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  color: var(--logo);
+
+  .logoGit {
+    color: var(--black-or-white);
+
+    :hover {
+      filter: opacity(.6);
+    }
+  }
+
+  .logoLinkedIn {
+    color: var(--link);
+
+    :hover {
+      filter: brightness(1.4);
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "techList": "HTML - CSS - Javascript - Typescript - React - NextJS - Github - StyledComponents - RESTfull - Figma - Godot",
+  "navList": [
+    {
+      "id": "1",
+      "title": "Início",
+      "link": "/"
+    },
+    {
+      "id": "2",
+      "title": "sobre",
+      "link": "/about"
+    },
+    {
+      "id": "3",
+      "title": "projetos",
+      "list": [
+        {
+          "id": "3.1",
+          "title": "ToDo",
+          "link": "/todo"
+        },
+        {
+          "id": "3.2",
+          "title": "Speed Reader",
+          "link": "/speedreader"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "contate-me",
+      "link": "/contact"
+    }
+  ],
+  "todoList": [
+    {
+      "key": "uuidv4()",
+      "isCompleted": "false",
+      "title": "Web Dev",
+      "text": "Terminar de desenvolver ToDo App e postar no LinkedIn"
+    },
+    {
+      "key": "uuidv4()",
+      "isCompleted": "false",
+      "title": "Estudos",
+      "text": "Ler algumas páginas do livro Rápido e Devagar"
+    },
+    {
+      "key": "uuidv4()",
+      "isCompleted": "false",
+      "title": "Meditação",
+      "text": "Praticar um exercício do livro A Liberated Mind"
+    },
+    {
+      "key": "uuidv4()",
+      "isCompleted": "false",
+      "title": "Lazer",
+      "text": "Acorda o Pedrinho, que hoje tem chocolate. Vem dançar calipso, vai ver cotio colhátio. don-don, dig-ri-don, don-don-don dig-dig-don, don , dig-ri-don, don-don-don dig-dig. - (John Lennon ft. Belchior)"
+    }
+  ]
+}
