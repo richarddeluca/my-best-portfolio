@@ -23,7 +23,7 @@ O projeto também pode ser acessado em [richard-deluca.netlify.app](https://rich
 O site atualmente possui dois projetos.
 
 - [ToDo](https://richard-deluca.netlify.app/todo) - Uma simples lista de tarefas (não armazena dados).
-- [Speed Reading](https://richard-deluca.netlify.app/speedreading) - Um app para aumentar a velocidade de leitura com treino.
+- [Speed Reading](https://richard-deluca.netlify.app/speedreader) - Um app para aumentar a velocidade de leitura com treino.
 
 ## outras funcionalidades
 
