@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 import { ChunkRegulator } from './styled'
-import { Notebook, Pause, Play, SkipBack, Stop } from 'phosphor-react'
+import { ArrowLeft, Notebook, Pause, Play, SkipBack, Stop } from 'phosphor-react'
 export function SpeedReader() {
 
   const initialText = `Olhou para o despertador, que fazia tique-taque na cômoda. Pai do Céu! — pensou. Eram seis e meia e os ponteiros moviam-se em silêncio, até passava da meia hora, era quase um quarto para as sete. O despertador não teria tocado? Da cama, via-se que estava corretamente regulado para as quatro; claro que devia ter tocado. Sim, mas seria possível dormir sossegadamente no meio daquele barulho que trespassava os ouvidos? Bem, ele não tinha dormido sossegadamente; no entanto, aparentemente, se assim era, ainda devia ter sentido mais o barulho. Mas que faria agora? o próximo trem saía às sete; para o apanhar tinha de correr como um doido, as amostras ainda não estavam embrulhadas e ele próprio não se sentia particularmente fresco e ativo. E, mesmo que apanhasse o trem, não conseguiria evitar uma reprimenda do chefe, visto que o porteiro da firma havia de ter esperado o trem das cinco e há muito teria comunicado a sua ausência. O porteiro era um instrumento do patrão, invertebrado e idiota. Bem, suponhamos que dizia que estava doente? Mas isso seria muito desagradável e pareceria suspeito, porque, durante cinco anos de emprego, nunca tinha estado doente. O próprio patrão certamente iria lá a casa com o médico da Previdência, repreenderia os pais pela preguiça do filho e poria de parte todas as desculpas, recorrendo ao médico da Previdência, que, evidentemente, considerava toda a humanidade um bando de falsos doentes perfeitamente saudáveis. E enganaria assim tanto desta vez? Efetivamente, Gregório sentia-se bastante bem, à parte uma sonolência que era perfeitamente supérflua depois de um tão longo sono, e sentia-se mesmo esfomeado.`
@@ -186,8 +186,39 @@ export function SpeedReader() {
     setSpanNumber(0)
     setInAction('stop')
   }
+
+  const handleSpacePress = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    switch (e.code) {
+      case 'KeyW': case 'KeyI':
+        setInAction('continue')
+        break
+      case 'KeyS': case 'KeyK':
+        setInAction('pause')
+        break
+      case 'KeyA': case 'KeyJ': case 'ArrowLeft':
+        setInAction('pause')
+        if (spanNumber > 1) {
+          setSpanNumber(spanNumber - 1)
+        }
+        break
+      case 'KeyD': case 'KeyL': case 'ArrowRight':
+        setInAction('pause')
+        if (spanNumber < quantidadeDePedacosNoTexto) {
+          setSpanNumber(spanNumber + 1)
+        }
+        break
+      case 'KeyP': case 'KeyR':
+        inAction === ('pause' || 'stop') ?
+          setInAction('continue') :
+          setInAction('pause')
+        break
+      default:
+        break;
+    }
+  };
+
   return (
-    <main className={styles.container}>
+    <main tabIndex={0} onKeyDown={handleSpacePress} className={styles.container}>
       <h1 className={styles.title}>Speed Reader</h1>
       <p className={styles.description}>Treine para ler mais rápido</p>
       <section>
@@ -222,21 +253,21 @@ export function SpeedReader() {
         <div className={styles.bottonContainer}>
           <div
             className={!lendo ? styles.initialInputOn : styles.initialInputOff}>
-            <div className="ppm-slider">
+            <div className='ppm-slider'>
               <p>{palavrasPorMinuto} palavras por minuto</p>
               <input
-                type="range"
-                min="60"
-                max="1500"
+                type='range'
+                min='60'
+                max='1500'
                 value={palavrasPorMinuto}
                 onChange={handleRangeChange}
               />
             </div>
-            <select name="select" defaultValue={'pequeno'} onChange={handleChunkSizeChange}>
-              <option value="unico">uma palavra</option>
-              <option value="pequeno">pequeno</option>
-              <option value="medio">médio</option>
-              <option value="grande">grande</option>
+            <select name='select' defaultValue={'pequeno'} onChange={handleChunkSizeChange}>
+              <option value='unico'>uma palavra</option>
+              <option value='pequeno'>pequeno</option>
+              <option value='medio'>médio</option>
+              <option value='grande'>grande</option>
             </select>
             <Play
               onClick={handlePlay}
@@ -255,7 +286,7 @@ export function SpeedReader() {
             }
             <div>
               <p>efeito 3D
-                <input type="checkbox" name="efeito3D" id="" checked={efeito3D} onChange={e => setEfeito3D(e.target.checked)} />
+                <input type='checkbox' name='efeito3D' id='' checked={efeito3D} onChange={e => setEfeito3D(e.target.checked)} />
               </p>
             </div>
             <br />
@@ -264,8 +295,8 @@ export function SpeedReader() {
               onClick={handleSkipBack}
             />
             <input
-              type="range"
-              min="1"
+              type='range'
+              min='1'
               max={quantidadeDePedacosNoTexto.toString()}
               value={spanNumber}
               onChange={handleTimeChange}
@@ -288,8 +319,8 @@ export function SpeedReader() {
               <>
                 <p>number de colunas</p>
                 <input
-                  type="range"
-                  min="1"
+                  type='range'
+                  min='1'
                   max='6'
                   value={nDeColunas}
                   onChange={handleColumnChange}
@@ -299,8 +330,8 @@ export function SpeedReader() {
               <>
                 <p> tamanho do gap</p>
                 <input
-                  type="range"
-                  min="0"
+                  type='range'
+                  min='0'
                   max='2'
                   step='0.25'
                   value={gap}
@@ -309,7 +340,7 @@ export function SpeedReader() {
               </>
             }
           </div>
-
+          <p>Use ← → para mudar as palavras destacadas e &quot;p&quot; para pausar</p>
         </div>
       </section>
     </main >
